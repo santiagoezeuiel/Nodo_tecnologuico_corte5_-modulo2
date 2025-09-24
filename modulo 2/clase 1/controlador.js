@@ -37,4 +37,42 @@
     console.log(miDomicilio);
 
 
+    // cosa ue no spueden ahccer connlassriles
+
+    let edadAlumno  = 24; //variables enteras
+
+    let edadAlumno = 32;
+
+    let dineroCuenta = 455293.50 // valor flotante o decimales
+
+    /* Cuando se almacena los valores numericos no de tiene que agregar el separador de miles*/
+
+    /* el nombre de las variables */
+
+    /*las variables pueden tener cualquier nombre, 
+        mintras tenga un caracter distinto js la toma como una variable diferente.
+    */
+
+    /* Varios patrones para declarar variables
+    
+        1) que sea representativo del valor que va a tener
+        2) No utilizar números al principio de la variable
+        3) No utilizar caracteres especiales 
+        4) No utilizar espacios en blanco
+        5) No utilizar todo MAYUSCULAS
+        6) No utilizar todo MINUSCULAS
+        7) No utilizar palabars recerbadas por el lenguaje
+    */
+    let edad_andres_herrera = 26;
+
+    let dniCliente = 20304050;
+
+    let apellidoMaterno = `RAFTI`;
+    let APELLIDOmATERNO = `RAFIT`;
+    let apellidomaterno = 'RAFIT';
+
+
+    let apellidoPaterno = `Moyano`; 
+
+
 }
