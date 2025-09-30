@@ -84,3 +84,40 @@ de dia el programa devera:
 
     }
 }
+
+/* Resumen de las estructuras condicionales */
+
+/*
+TENEMOS DIFERENTES ESTRUCTURAS CONDICIONALES
+
+(01) -  if/else
+    -analisa variables continuas son las
+que pueden asumir calores infinitos dentro de un rango
+    -importe de una compre
+    -suldo de un empleado
+    -peso de Kiligramos ade alguna cosa
+-tengo que analizar que se cumplan operaciones logicos complejos
+        if ((sueldo >= 1000)) && (sueldop <= 10000)
+        {
+        }
+        else
+        {
+        }
+    -que puede tener unicamente el dado verdadero.
+    - que se puede crear condicionales adinados
+
+(02) Operador ternario => tres aprtes
+    -expresion logica ? lado verdadero : lado falso;
+    -tiene que tener un lado verdadero
+    -tiene que tener lado falso
+    -para asignarle valor o variables
+
+(03) switch
+
+    -tengo quye analizar variables discretas y con casos finitos
+    --se puede anidar
+    -  es cada opcion tiene llevar la palabra break para finalizar la funcion
+
+todas estas variable se pueden convinar entre ellos
+
+*/
