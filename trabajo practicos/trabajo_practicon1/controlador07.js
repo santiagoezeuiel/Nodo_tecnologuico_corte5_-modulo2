@@ -21,58 +21,64 @@ $ 42.000,00
 Realice un programa en JavaScript que permita ingresar el código del producto y la cantidad de bolsas a comprar y que solo determine el importe total a pagar.
 */
 
-{
+
     let codigo = Number(prompt(`Ingrese el codigo del producto (1=Dogui x 21kg, 2=Tiernitos x 21kg, 3=Dogpro x )`))
     let cantidadProducto = Number(prompt(`Cantidad de producto`));
 
 
-    if (codigo === 1)
-        {   
-            if (cantidadProducto <= 4)
+    switch(codigo)
+    {
+        case 1:
             {
-                console.log(`Total a pagar $${cantidadProducto * 38000}`)
+                if (cantidadProducto <= 4)
+                {
+                    console.log(`Total a pagar $${cantidadProducto * 38000}`)
+                }
+                else if (cantidad <= 10)
+                {
+                    console.log(`Total a pagar $${cantidadProducto * 36000}`)
+                }
+                else
+                {
+                    console.log(`Total a pagar $${cantidadProducto * 34000}`)
+                }
             }
-            else if (cantidad <= 10)
+            break;
+        case 2:
             {
-                console.log(`Total a pagar $${cantidadProducto * 36000}`)
+                if (cantidadProducto <= 4)
+                {
+                    console.log(`Total a pagar $${cantidadProducto * 31000}`)
+                }
+                else if (cantidadProducto <= 10)
+                {
+                    console.log(`Total a pagar $${cantidadProducto * 29000}`)
+                }
+                else
+                {
+                    console.log(`total a pagar $${cantidadProducto * 27000}`)
+                }
+            }
+            break;
+        case 3:
+            {
+             if (cantidadProducto <= 4)
+            {
+                console.log(`Total a apgar $${cantidadProducto * 46000}`)
+            }
+            else if (cantidadProducto <= 10)
+            {
+                console.log(`Total a pagar $${cantidadProducto * 44000}`)
             }
             else
             {
-                console.log(`Total a pagar $${cantidadProducto * 34000}`)
+                console.log(`Total a pagar $${cantidadProducto * 42000}`)
+            }   
             }
-        } 
-    else if (codigo === 2)
-    {
-        if (cantidadProducto <= 4)
+            break;
+        default:
         {
-            console.log(`Total a pagar $${cantidadProducto * 31000}`)
+            console.log(`El codigo no encontrado`);
         }
-        else if (cantidadProducto <= 10)
-        {
-            console.log(`Total a pagar $${cantidadProducto * 29000}`)
-        }
-        else
-        {
-            console.log(`total a pagar $${cantidadProducto * 27000}`)
-        }
-    }  
-    else if (codigo === 3)
-    {
-        if (cantidadProducto <= 4)
-        {
-            console.log(`Total a apgar $${cantidadProducto * 46000}`)
-        }
-        else if (cantidadProducto <= 10)
-        {
-            console.log(`Total a pagar $${cantidadProducto * 44000}`)
-        }
-        else
-        {
-            console.log(`Total a pagar $${cantidadProducto * 42000}`)
-        }
-    }
-    else
-    {
-        console.log(`Producto no encontrado (Ingrese un codigo valido)`)
-    }
-}
+        break;
+    } 
