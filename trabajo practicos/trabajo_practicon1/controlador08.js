@@ -9,7 +9,7 @@ let edad = 0;
 
 edad = Number(prompt(`Ingrese su edad:`))
 
-if ((edad > 0) && (edad <= 12))
+if ((edad >= 0) && (edad <= 12))
 {
     console.log(`La persona es un niño`);
 }
@@ -23,11 +23,11 @@ else if ((edad >= 18) && (edad <= 64))
 }
 else if (edad > 64)
 {
-    console.log(`La persona es un adulto mayor`)
+    console.log(`La persona es un adulto mayor`);
 }
 else
 {
-    console.log(`La edad ingresada no es correcta`)
+    console.log(`La edad ingresada no es correcta`);
 }
 
 console.log(`La edad que ingreso es: ${edad}`);

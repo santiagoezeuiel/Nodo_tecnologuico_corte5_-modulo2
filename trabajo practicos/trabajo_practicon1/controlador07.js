@@ -32,15 +32,15 @@ Realice un programa en JavaScript que permita ingresar el código del producto y
             {
                 if (cantidadProducto <= 4)
                 {
-                    console.log(`Total a pagar $${cantidadProducto * 38000}`)
+                    console.log(`Total: $${cantidadProducto * 38000}`)
                 }
-                else if (cantidad <= 10)
+                else if (cantidadProducto <= 10)
                 {
-                    console.log(`Total a pagar $${cantidadProducto * 36000}`)
+                    console.log(`Total: $${cantidadProducto * 36000}`)
                 }
                 else
                 {
-                    console.log(`Total a pagar $${cantidadProducto * 34000}`)
+                    console.log(`Total: $${cantidadProducto * 34000}`)
                 }
             }
             break;
@@ -48,15 +48,15 @@ Realice un programa en JavaScript que permita ingresar el código del producto y
             {
                 if (cantidadProducto <= 4)
                 {
-                    console.log(`Total a pagar $${cantidadProducto * 31000}`)
+                    console.log(`Total: $${cantidadProducto * 31000}`)
                 }
                 else if (cantidadProducto <= 10)
                 {
-                    console.log(`Total a pagar $${cantidadProducto * 29000}`)
+                    console.log(`Total: $${cantidadProducto * 29000}`)
                 }
                 else
                 {
-                    console.log(`total a pagar $${cantidadProducto * 27000}`)
+                    console.log(`total: $${cantidadProducto * 27000}`)
                 }
             }
             break;
@@ -64,15 +64,15 @@ Realice un programa en JavaScript que permita ingresar el código del producto y
             {
              if (cantidadProducto <= 4)
             {
-                console.log(`Total a apgar $${cantidadProducto * 46000}`)
+                console.log(`Total: $${cantidadProducto * 46000}`)
             }
             else if (cantidadProducto <= 10)
             {
-                console.log(`Total a pagar $${cantidadProducto * 44000}`)
+                console.log(`Total: $${cantidadProducto * 44000}`)
             }
             else
             {
-                console.log(`Total a pagar $${cantidadProducto * 42000}`)
+                console.log(`Total: $${cantidadProducto * 42000}`)
             }   
             }
             break;
