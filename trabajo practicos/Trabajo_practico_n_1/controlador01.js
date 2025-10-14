@@ -115,11 +115,17 @@ Consideraciones: para realizar el ejercicio debe utilizar solamente código Java
                 console.log(`MOTOCICLETA registrada -- $ ${PRECIO_MOTOCICLETA}`);// Muesta si las Motocicletas fue ingresado
                 break;//Fin del caso N 4
             
-            default:
-                console.log(`\n`) //salto de linea
+            case "5":
+               console.log(`\n`) //salto de linea
                 console.log("X".repeat(30))
                 console.log(` Opción invalida. Por favor selecione del (1 - 5)`); //Mensaje de error
                 console.log("X".repeat(30))
+                break;
+
+            default:
+                veiculosNumero--;
+
+                
         }
 
         //Mostrar un resumen parcial de la jornada

@@ -136,7 +136,7 @@ sin interacción con el DOM y cargar los datos de entrada por medio de prompt.
     console.log(`Total de notas válidas: ${totalNota}`);
     console.log(`Total de registros: ${totalNota + error}`);
 
-    if (totalNotas > 0) {
+    if (totalNota > 0) {
     let promedio = sumaNota / totalNota;
     console.log(` Promedio general: ${promedio.toFixed(2)}`);
     
@@ -149,7 +149,7 @@ sin interacción con el DOM y cargar los datos de entrada por medio de prompt.
     console.log(`Excelentes: ${((exelente / totalNota) * 100).toFixed(1)}%`);
     
     // Análisis de calidad
-    console.log("\n🎯 ANÁLISIS DE CALIDAD:");
+    console.log("\n ANÁLISIS DE CALIDAD:");
     console.log("─".repeat(40));
     let calidadAlta = muyBueno + exelente;
     let porcentajeCalidadAlta = ((calidadAlta / totalNota) * 100).toFixed(1);
