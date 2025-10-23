@@ -1,4 +1,4 @@
-/*
+ /*
 Ejercicio Nro. 12:
 Una Frigorífico posee una cinta transportadora y clasificadora de huevos para consumo humano. 
 La cinta no tan solo los transporta sino también los clasifica según su peso. es decir, 

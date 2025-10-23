@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tragamonedas Básico</title>
+    <style>
+        body {
+            background-color: rgb(126, 255, 154);
+        }
+        .slot-machine {
+            text-align: center;
+            margin: 50px auto;
+            width: 300px;
+        }
+
+        .reels {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .reel {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #333;
+            margin: 0 5px;
+            font-size: 2em;
+            line-height: 80px;
+            background-color: #f0f0f0;
+        }
+
+        .controls {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #534caf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            min-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slot-machine">
+        <h1>¡Tragamonedas!</h1>
+        
+        <div class="reels">
+            <div class="reel" id="reel1">🍒</div>
+            <div class="reel" id="reel2">🍋</div>
+            <div class="reel" id="reel3">🍊</div>
+            <div class="reel" id="reel4">🍊</div>
+        </div>
+
+        <div class="controls">
+            <button id="spinBtn">Girar!</button>
+        </div>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        class SlotMachine {
+            constructor() {
+                this.symbols = ['🍒', '🍋', '🍊', '🍇', '🍉', '🔔', '💎'];
+                this.reels = [
+                    document.getElementById('reel1'),
+                    document.getElementById('reel2'),
+                    document.getElementById('reel3'),
+                    document.getElementById('reel4')
+                ];
+                this.spinBtn = document.getElementById('spinBtn');
+                this.messageEl = document.getElementById('message');
+                
+                this.isSpinning = false;
+                this.spinDuration = 1000; // 1 segundo
+
+                this.spinBtn.addEventListener('click', () => this.spin());
+            }
+
+            getRandomSymbol() {
+                return this.symbols[Math.floor(Math.random() * this.symbols.length)];
+            }
+
+            async spin() {
+                if (this.isSpinning) return;
+
+                this.isSpinning = true;
+                this.spinBtn.disabled = true;
+                this.messageEl.textContent = '';
+
+                // Animación de giro
+                const spinPromises = this.reels.map((reel, index) => {
+                    return new Promise(resolve => {
+                        const startTime = Date.now();
+                        const spinInterval = setInterval(() => {
+                            reel.textContent = this.getRandomSymbol();
+                            
+                            if (Date.now() - startTime > this.spinDuration + (index * 200)) {
+                                clearInterval(spinInterval);
+                                resolve();
+                            }
+                        }, 50);
+                    });
+                });
+
+                await Promise.all(spinPromises);
+
+                // Verificar resultado
+                this.checkResult();
+                this.isSpinning = false;
+                this.spinBtn.disabled = false;
+            }
+
+            checkResult() {
+                const results = this.reels.map(reel => reel.textContent);
+                
+                if (results[0] === results[1] && results[1] === results[2]) {
+                    this.messageEl.textContent = '🎉 ¡Felicidades! Ganaste el premio mayor! 🎉';
+                    this.messageEl.style.color = 'green';
+                } else if (results[0] === results[1] || results[1] === results[2] || results[0] === results[2]) {
+                    this.messageEl.textContent = '¡Bien! Tienes una combinación parcial';
+                    this.messageEl.style.color = 'orange';
+                } else {
+                    this.messageEl.textContent = 'Inténtalo de nuevo';
+                    this.messageEl.style.color = 'red';
+                }
+            }
+        }
+
+        // Inicializar la máquina tragamonedas
+        new SlotMachine();
+    </script>
+</body>
+</html>
