@@ -38,7 +38,7 @@
             padding: 10px 20px;
             font-size: 1em;
             cursor: pointer;
-            background-color: #534caf;
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 5px;
@@ -64,7 +64,6 @@
             <div class="reel" id="reel1">🍒</div>
             <div class="reel" id="reel2">🍋</div>
             <div class="reel" id="reel3">🍊</div>
-            <div class="reel" id="reel4">🍊</div>
         </div>
 
         <div class="controls">
@@ -81,8 +80,7 @@
                 this.reels = [
                     document.getElementById('reel1'),
                     document.getElementById('reel2'),
-                    document.getElementById('reel3'),
-                    document.getElementById('reel4')
+                    document.getElementById('reel3')
                 ];
                 this.spinBtn = document.getElementById('spinBtn');
                 this.messageEl = document.getElementById('message');
@@ -111,7 +109,7 @@
                         const spinInterval = setInterval(() => {
                             reel.textContent = this.getRandomSymbol();
                             
-                            if (Date.now() - startTime > this.spinDuration + (index * 200)) {
+                            if (Date.now() - startTime > this.spinDuration + (index * 900)) {
                                 clearInterval(spinInterval);
                                 resolve();
                             }

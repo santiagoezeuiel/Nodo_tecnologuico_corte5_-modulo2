@@ -23,7 +23,7 @@ El ultimo caso, verificar que sicede cuando B es igual a cero Que sucede con el 
         }
         else
         {
-            return -1;
+            return false;
         }
         
     }
@@ -37,7 +37,7 @@ El ultimo caso, verificar que sicede cuando B es igual a cero Que sucede con el 
         }
         else
         {
-            return -1;
+            return false;
         }
 
         
@@ -55,7 +55,7 @@ El ultimo caso, verificar que sicede cuando B es igual a cero Que sucede con el 
 
         if (numero2 === 0)
         {
-            return -1;
+            return false;
         }
         else
         {
