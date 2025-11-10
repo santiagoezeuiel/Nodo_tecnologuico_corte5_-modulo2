@@ -54,7 +54,7 @@ window.onload = () =>{
                 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                 display: inline-block;
             ">
-                Importe a devolver (1.2%): 
+                Importe a devolucion (1.2%): 
                 <strong style="color:#0b6623;">$${taza.toFixed(2)}</strong><br>
                 sobre un importe base de <strong>$${importe.toFixed(2)}</strong>
             </p>
