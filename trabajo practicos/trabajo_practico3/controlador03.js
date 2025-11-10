@@ -1,4 +1,4 @@
-import {obtenerTasa} from "./modulo2.js";
+import {obtenerTasa} from "./modulo02.js";
 
 
 window.onload = () => {

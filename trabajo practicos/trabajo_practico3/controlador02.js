@@ -1,4 +1,4 @@
-import {promedioNota, condicionFinal} from "./modulo1.js";
+import {promedioNota, condicionFinal} from "./modulo01.js";
 
 const resultadoValor = document.getElementById('resultadoValor');
 const resultadoCondicion = document.getElementById('resultadoCondicion');

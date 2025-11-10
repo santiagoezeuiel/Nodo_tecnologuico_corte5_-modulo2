@@ -1,4 +1,4 @@
-import { importeGanancia } from "./modulo1.js";
+import { importeGanancia } from "./modulo01.js";
 
 window.onload = () => {
 

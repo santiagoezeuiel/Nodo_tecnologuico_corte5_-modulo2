@@ -26,13 +26,18 @@
         </div>
     </div>
     <div class="calculadora-container">
-        <h1>Ingrese el precio del producto</h1>
-        <input id="idproducto" type="number" value="0" min="0">
-        <input id="idbotonCalcular" type="button" value="Calcular">
-        <div id="resultadoPrecio"></div>
+        <input type="number" id="idglucosa" placeholder="Nivel de glucosa">
+        <input type="number" id="idpeso" placeholder="Peso corporal (kg)">
+        <select id="idtipo">
+            <option value="1">Tipo 1</option>
+            <option value="2">Tipo 2</option>
+        </select>
+        <button id="idcalcular">Calcular dosis</button>
+
+        <div id="idresultado"></div>
     </div>
     
 
-    <script src="controlador01.js" type="module"></script>
+    <script src="controlador07.js" type="module"></script>
 </body>
 </html>
