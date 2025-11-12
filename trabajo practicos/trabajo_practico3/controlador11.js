@@ -1,36 +1,30 @@
-import {calcularInsulina} from "./modulo06.js"
+import {sinNumeros} from './modulo10.js';
 
 
 window.onload = () => {
 
-    //Comprobar que el controlador esta funcionando en el html
-    console.log(`El controlador 07 esta funcionado`);
+    //Comprobar que el controlador N°11 esta funcionando
+    console.log(`El controlador 11 esta funcionadno`);
 
-    //capturare los elementos del html
-    const idglucosa = document.querySelector(`#idglucosa`);
-    const idpeso = document.querySelector(`#idpeso`);
-    const idtipo = document.querySelector(`#idtipo`);
+    //Lebantar los elemantos del html en el controlador
+    const idtexto = document.querySelector(`#idtexto`);
     const idcalcular = document.querySelector(`#idcalcular`);
     const idresultado = document.querySelector(`#idresultado`);
 
-
-    //Controlar los componente en el consola del  navegador
-    console.log(idglucosa);
-    console.log(idpeso);
-    console.log(idtipo);
+    //Ver en la consola los elementos del html
+    console.log(idtexto);
     console.log(idcalcular);
     console.log(idresultado);
 
-    //Evento de clic en el boton seleccionado
-    idcalcular.onclick = () =>{
 
-        const glucosa = parseFloat(idglucosa.value);
-        const peso = parseFloat(idpeso.value);
-        const tipo = idtipo.value;
+    idcalcular.onclick = () => {
 
-        if (isNaN(glucosa) || isNaN(peso) || glucosa <= 0 || peso <= 0) 
-            {
-                idresultado.innerHTML = `<span style="color: #f80808ff; 
+        const texto = idtexto.value.trim();
+
+        //Condicion para que el campo no este vacio cuando se calcula
+        if (!texto)
+        {
+            idresultado.innerHTML = `<span style="color: #f80808ff; 
                 font-size: 32px; 
                 font-family: 'Montserrat', sans-serif; 
                 font-weight: 700; 
@@ -41,13 +35,15 @@ window.onload = () => {
                 border-radius: 10px;
                 display: inline-block;
                 margin-top: 10px;
-                letter-spacing: 1px;">Ingrese un número válido</span>`;
+                letter-spacing: 1px;">Ingrese un Texto</span>`;
                 return;
-            }
+        }
 
-        const dosis = calcularInsulina(glucosa, peso, tipo);
-        
-        idresultado.innerHTML = `
+        const resultado = sinNumeros(texto);
+
+        // Mostramos el resultado en el HTML
+        if (resultado) {
+            idresultado.innerHTML = `
             <p style="
                     font-size: 22px; 
                     color: #155724; 
@@ -59,10 +55,26 @@ window.onload = () => {
                     font-weight: 600;
                     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                     display: inline-block;
-                ">
-                    Dosis recomendada: 
-                    <strong style="color:#0b6623;">${dosis.toFixed(2)}</strong> <strong> unidades</strong><br>
+                "> 
+                    <span style="color:green;">El texto no contiene números.</span><br>
             </p>`;
+        } else {
+            idresultado.innerHTML = `
+            <p style="
+                    font-size: 22px; 
+                    color: #ff0000ff; 
+                    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+                    border: 2px solid #a72828ff;
+                    padding: 15px 20px;
+                    border-radius: 10px;
+                    font-family: 'Segoe UI', sans-serif;
+                    font-weight: 600;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                    display: inline-block;
+                "> 
+                    <span style="color:#ff0000ff;">El texto contiene al menos un número.</span<br>
+            </p>`;
+        }
     }
 
     // Obtener el nombre del archivo actual (por ejemplo: "index05.html")
@@ -80,4 +92,6 @@ window.onload = () => {
             enlace.classList.add("btn-activo");
         }
     });
+    
+     
 }

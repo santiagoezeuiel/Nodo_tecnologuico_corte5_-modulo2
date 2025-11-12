@@ -1,36 +1,30 @@
-import {calcularInsulina} from "./modulo06.js"
+import {contarVocales} from "./modulo07.js"
 
 
 window.onload = () => {
 
-    //Comprobar que el controlador esta funcionando en el html
-    console.log(`El controlador 07 esta funcionado`);
+    //Comprobar que el controlador de esta funcionando
+    console.log(`El controlador N° 8 esta funcioanndo`);
 
-    //capturare los elementos del html
-    const idglucosa = document.querySelector(`#idglucosa`);
-    const idpeso = document.querySelector(`#idpeso`);
-    const idtipo = document.querySelector(`#idtipo`);
+    //Capturar los elementos de html
+    const idtexto = document.querySelector(`#idtexto`);
     const idcalcular = document.querySelector(`#idcalcular`);
     const idresultado = document.querySelector(`#idresultado`);
 
-
-    //Controlar los componente en el consola del  navegador
-    console.log(idglucosa);
-    console.log(idpeso);
-    console.log(idtipo);
+    //Controlar los componente en la consola
+    console.log(idtexto);
     console.log(idcalcular);
     console.log(idresultado);
 
-    //Evento de clic en el boton seleccionado
-    idcalcular.onclick = () =>{
+    idcalcular.onclick = () => {
 
-        const glucosa = parseFloat(idglucosa.value);
-        const peso = parseFloat(idpeso.value);
-        const tipo = idtipo.value;
+        const texto = idtexto.value.trim();
+    
 
-        if (isNaN(glucosa) || isNaN(peso) || glucosa <= 0 || peso <= 0) 
-            {
-                idresultado.innerHTML = `<span style="color: #f80808ff; 
+        //Condicion para que el campo no este vacio cuando se calcula
+        if (!texto)
+        {
+            idresultado.innerHTML = `<span style="color: #f80808ff; 
                 font-size: 32px; 
                 font-family: 'Montserrat', sans-serif; 
                 font-weight: 700; 
@@ -41,12 +35,31 @@ window.onload = () => {
                 border-radius: 10px;
                 display: inline-block;
                 margin-top: 10px;
-                letter-spacing: 1px;">Ingrese un número válido</span>`;
+                letter-spacing: 1px;">Ingrese un Texto</span>`;
                 return;
-            }
+        }
 
-        const dosis = calcularInsulina(glucosa, peso, tipo);
-        
+        //Condicion para que solo ingresen texto en el campo idtexto
+        if (!isNaN(texto))
+        {
+            idresultado.innerHTML = `<span style="color: #f80808ff; 
+                font-size: 32px; 
+                font-family: 'Montserrat', sans-serif; 
+                font-weight: 700; 
+                text-shadow: 2px 2px 8px rgba(255, 254, 254, 1);
+                background: rgba(172, 135, 135, 0.47);
+                border: 2px solid #ff4d4d;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                margin-top: 10px;
+                letter-spacing: 1px;">Ingrese solo Texto</span>`;
+                return;
+
+        }
+       
+        const cantidad = contarVocales(texto);
+
         idresultado.innerHTML = `
             <p style="
                     font-size: 22px; 
@@ -59,9 +72,9 @@ window.onload = () => {
                     font-weight: 600;
                     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                     display: inline-block;
-                ">
-                    Dosis recomendada: 
-                    <strong style="color:#0b6623;">${dosis.toFixed(2)}</strong> <strong> unidades</strong><br>
+                "> 
+                    El texto tiene la cantidad de vocales <span style="color: #0e0d0dff;">${cantidad.vocales}</span> vocal(es).<br> <br>
+                    El texto tiene la cantidad de consonante <span style="color: #0e0d0dff;">${cantidad.consonante}</span> consonante(es).
             </p>`;
     }
 

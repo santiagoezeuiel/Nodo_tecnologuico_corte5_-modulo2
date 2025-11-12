@@ -32,6 +32,20 @@ window.onload = () => {
             `El precio del producto es: <strong style='color:black;'>$ ${importeFinal}</strong>`;
     }
 
+    // Obtener el nombre del archivo actual (por ejemplo: "index05.html")
+    const paginaActual = window.location.pathname.split("/").pop();
 
+    // Seleccionar todos los enlaces con clase btn-rectangular
+    const enlaces = document.querySelectorAll(".btn-rectangular");
+
+    // Recorrer cada enlace
+    enlaces.forEach(enlace => {
+        const href = enlace.getAttribute("href");
+        
+        // Si coincide con la página actual, aplicar la clase btn-activo
+        if (href === paginaActual) {
+            enlace.classList.add("btn-activo");
+        }
+    });
 
 }
