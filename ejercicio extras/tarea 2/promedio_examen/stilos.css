@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #bfddf8, #75b9f5, #128ffc);
+    color: white;
+}
+
+div {
+    background: #47615f;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Título */
+h1 {
+    color: #09e7e7;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0,255,245,0.7);
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #eeeeee;
+}
+
+/* Inputs */
+input[type="number"] {
+    width: 80%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background: #393e46;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="number"]:focus {
+    background: #91c9d3;
+    box-shadow: 0 0 10px #00adb5;
+}
+
+/* Botón */
+button {
+    background: #00adb5;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #00fff5;
+    box-shadow: 0 0 15px rgba(0,255,245,0.7);
+    transform: translateY(-3px);
+}
+
+/* Resultado */
+#idresultado {
+    margin-top: 25px;
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Mensaje de éxito */
+.resultado {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Mensaje de error */
+.error {
+    color: #f80808ff;
+    background: rgba(172, 135, 135, 0.47);
+    border: 2px solid #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+

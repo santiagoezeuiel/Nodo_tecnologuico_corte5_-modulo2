@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stilos.css">
+    <link rel="icon" type="image/x-icon" href="./icono/gatiko_momia.ico">
+    <title>Alumnos</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-code"></i> Trabajo Práctico Nro. 04</h1>
+            <h2>Diplomatura Universitaria en Desarrollo Web Full Stack con JavaScript</h2>
+            <p class="subtitle">Módulo: JavaScript - Manipulación de Arrays y Objetos</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="exercise-panel">
+                <h3><i class="fas fa-users"></i> Gestión de Cohortes de Alumnos</h3>
+                
+                <div class="controls">
+                    <button id="btnEjercicio1" class="btn-primary">
+                        <i class="fas fa-list"></i> Ejercicio 1 - Mostrar Alumnos
+                    </button>
+                    <button id="btnEjercicio2" class="btn-secondary">
+                        <i class="fas fa-object-group"></i> Ejercicio 2 - Unificar Cohortes
+                    </button>
+                    <button id="btnEjercicio3" class="btn-success">
+                        <i class="fas fa-filter"></i> Ejercicio 3 - Filtrar Aprobados
+                    </button>
+                    <button id="btnEjercicio4" class="btn-warning">
+                        <i class="fas fa-sort-numeric-up"></i> Ejercicio 4 - Ordenar por Nota
+                    </button>
+                    <button id="btnEjercicio5" class="btn-danger">
+                        <i class="fas fa-calculator"></i> Ejercicio 5 - Contar Aprobados
+                    </button>
+                </div>
+
+                <div class="search-section">
+                    <label for="dniBuscado"><i class="fas fa-id-card"></i> Buscar por DNI:</label>
+                    <input type="text" id="dniBuscado" placeholder="Ej: 12345678">
+                    <button id="btnBuscarDNI" class="btn-search">
+                        <i class="fas fa-search"></i> Buscar
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <h3><i class="fas fa-chart-bar"></i> Resultados</h3>
+                <div class="results-container">
+                    <div id="resultados" class="results-content">
+                        <p class="instruction">Selecciona un ejercicio para ver los resultados aquí...</p>
+                    </div>
+                </div>
+                
+                <div class="data-info">
+                    <div class="info-card">
+                        <h4><i class="fas fa-database"></i> Datos en Memoria</h4>
+                        <p>4 cohortes con 18 alumnos en total</p>
+                        <p>Todos los cálculos se realizan en tiempo real</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diplomatura Universitaria en Desarrollo Web Full Stack con JavaScript</p>
+        <p>Módulo: JavaScript - Trabajo Práctico Nro. 04</p>
+        <p class="tech">Tecnologías utilizadas: JavaScript ES6+, HTML5, CSS3</p>
+        <p>Alumno: Sosa Santiago</p>
+    </footer>
+
+    <script type="module" src="controlador01.js"></script>
+    
+</body>
+</html>
