@@ -56,7 +56,8 @@ export const cohorte03 = [
     new Alumno("90123456", "Clara", "Méndez", 3),
     new Alumno("12345679", "Jorge", "Salinas", 6),
     new Alumno("23456780", "Andrea", "Cruz", 2),
-    new Alumno("34567891", "Sergio", "Paredes", 8)
+    new Alumno("34567891", "Sergio", "Paredes", 8),
+    new Alumno("20125234", "Maria", "Suarez", 4)
 ];
 
 export const cohorte04 = [

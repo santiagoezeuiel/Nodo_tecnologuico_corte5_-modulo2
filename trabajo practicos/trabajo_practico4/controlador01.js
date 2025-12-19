@@ -7,7 +7,7 @@ import {cohorte01, cohorte02, cohorte03, cohorte04,
 } from './modulo01.js';
 
 //Función para mostrar los resultados en el DOM
-//Esta funcion logramos mostrar los contenidos dinamico en el DOM
+//Esta funcion logramos mostrar los titulos y contenidos dinamico en el DOM
 const mostrarResultados = (titulo, contenido) => {
 
     const resultadosDiv = document.getElementById('resultados');

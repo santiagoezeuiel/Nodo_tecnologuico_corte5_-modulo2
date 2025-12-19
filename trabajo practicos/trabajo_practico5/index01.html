@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico Final - API Países</title>
+    <link rel="stylesheet" href="stilos/stilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-globe-americas"></i> Trabajo Práctico Final - API RestCountries</h1>
+            <p class="subtitle">Diplomatura de Desarrollo Web Full Stack con JavaScript</p>
+        </div>
+    </header>
+
+    <main class="container main-container">
+        <div class="app-grid">
+            <!-- Panel de Control -->
+            <section class="control-panel card">
+                <h2><i class="fas fa-sliders-h"></i> Panel de Control</h2>
+                
+                <div class="form-group">
+                    <label for="region-select"><i class="fas fa-map"></i> Seleccionar Región:</label>
+                    <select id="region-select" class="form-control">
+                        <option value="">-- Seleccione una región --</option>
+                        <option value="africa">África</option>
+                        <option value="americas">Américas</option>
+                        <option value="asia">Asia</option>
+                        <option value="europe">Europa</option>
+                        <option value="oceania">Oceanía</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="fetch-btn" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Obtener Países
+                    </button>
+                    <button id="clear-btn" class="btn btn-secondary">
+                        <i class="fas fa-broom"></i> Limpiar
+                    </button>
+                </div>
+
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> Instrucciones</h3>
+                    <ul>
+                        <li>1. Selecciona una región del menú desplegable</li>
+                        <li>2. Haz clic en "Obtener Países" para cargar los datos</li>
+                        <li>3. Los resultados aparecerán en la tabla</li>
+                        <li>4. Revisa la consola para ver los ejercicios de destructuring</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Resultados -->
+            <section class="results-section card">
+                <h2><i class="fas fa-flag"></i> Países de la Región</h2>
+                <div class="results-info">
+                    <p id="region-name">Región: <span class="placeholder">No seleccionada</span></p>
+                    <p id="countries-count">Países: <span class="placeholder">0</span></p>
+                </div>
+                
+                <!-- Tabla de Países -->
+                <div class="table-container" id="table-container">
+                    <p class="empty-message">Selecciona una región para ver los países</p>
+                </div>
+
+                <!-- Contenedor para cards (alternativa) -->
+                <div class="cards-container" id="cards-container"></div>
+                
+                <!-- Botón para cambiar vista -->
+                <div class="view-toggle">
+                    <button id="toggle-view" class="btn btn-outline">
+                        <i class="fas fa-th-large"></i> Cambiar a Vista de Tarjetas
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Ejercicios Destructuring -->
+        <section class="exercises-section card">
+            <h2><i class="fas fa-code"></i> Ejercicios de Destructuring</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="destructuring-a">Inciso A</button>
+                <button class="tab-btn" data-tab="destructuring-b">Inciso B</button>
+                <button class="tab-btn" data-tab="destructuring-c">Inciso C</button>
+                <button class="tab-btn" data-tab="destructuring-d">Inciso D</button>
+                <button class="tab-btn" data-tab="spread-e">Spread E</button>
+                <button class="tab-btn" data-tab="spread-f">Spread F</button>
+            </div>
+            
+            <div class="tab-content">
+                <div id="destructuring-a" class="tab-pane active">
+                    <h3>Inciso A: Destructuring básico con forEach</h3>
+                    <div class="code-output" id="output-a">
+                        <p>Selecciona una región para ver el resultado</p>
+                    </div>
+                </div>
+                
+                <div id="destructuring-b" class="tab-pane">
+                    <h3>Inciso B: Destructuring con alias</h3>
+                    <div class="code-output" id="output-b">
+                        <p>Selecciona una región para ver el resultado</p>
+                    </div>
+                </div>
+                
+                <div id="destructuring-c" class="tab-pane">
+                    <h3>Inciso C: Destructuring en parámetros</h3>
+                    <div class="code-output" id="output-c">
+                        <p>Selecciona una región para ver el resultado</p>
+                    </div>
+                </div>
+                
+                <div id="destructuring-d" class="tab-pane">
+                    <h3>Inciso D: Destructuring de arrays con valor por defecto</h3>
+                    <div class="code-output" id="output-d">
+                        <p>Selecciona una región para ver el resultado</p>
+                    </div>
+                </div>
+                
+                <div id="spread-e" class="tab-pane">
+                    <h3>Inciso E: Spread Operator - Combinar regiones</h3>
+                    <div class="code-output" id="output-e">
+                        <p>Selecciona una región para ver el resultado</p>
+                    </div>
+                </div>
+                
+                <div id="spread-f" class="tab-pane">
+                    <h3>Inciso F: Spread Operator - Objeto simplificado</h3>
+                    <div class="code-output" id="output-f">
+                        <p>Selecciona una región para ver el resultado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Trabajo Práctico N°05 - Diplomatura de Desarrollo Web Full Stack con JavaScript</p>
+            <p>Estudiante: Santiago Ezequiel Sosa</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
